@@ -3,11 +3,27 @@ import { Search, ChevronDown } from 'lucide-react';
 import { NEARBY_STORES } from '../../data/stores';
 import { LocationModal } from '../common/LocationModal';
 
-const StoreLogo = ({ brand }) => {
+const StoreLogo = ({ brand, logoUrl, name }) => {
+  const [imageError, setImageError] = useState(false);
+
+  // If CDN image is provided and hasn't errored, use official 1Fi CDN image as first choice
+  if (logoUrl && !imageError) {
+    return (
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-gray-200/90 bg-white p-1.5 shadow-sm overflow-hidden">
+        <img
+          src={logoUrl}
+          alt={name || brand}
+          onError={() => setImageError(true)}
+          className="h-full w-full object-contain rounded-lg"
+        />
+      </div>
+    );
+  }
+
+  // Graceful authentic SVG fallback if CDN image is not available or fails to load
   if (brand === 'suzuki') {
     return (
       <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl border border-gray-200/90 bg-white p-1.5 shadow-sm">
-        {/* Red Suzuki S */}
         <svg viewBox="0 0 100 70" className="h-6 w-7" fill="none">
           <path
             d="M25 5 L85 5 L70 26 L45 26 L75 42 L15 42 L30 21 L55 21 Z"
@@ -28,7 +44,6 @@ const StoreLogo = ({ brand }) => {
   if (brand === 'honda') {
     return (
       <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl border border-gray-200/90 bg-white p-1.5 shadow-sm">
-        {/* Red Honda Wing */}
         <svg viewBox="0 0 100 60" className="h-6 w-8" fill="#E53935">
           <path d="M10 45 C25 25, 60 10, 90 8 C70 18, 55 30, 45 42 C65 28, 85 24, 95 24 C75 36, 60 46, 50 54 L10 54 Z" />
         </svg>
@@ -42,7 +57,6 @@ const StoreLogo = ({ brand }) => {
   if (brand === 'atelier') {
     return (
       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-gray-200/90 bg-white p-2 shadow-sm">
-        {/* Golden Mandala / Flower Emblem */}
         <div className="relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-amber-400 p-1">
           <div className="grid grid-cols-2 gap-0.5">
             <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
@@ -123,8 +137,12 @@ export const NearbyStoresView = () => {
             key={store.id}
             className="flex items-center gap-3.5 rounded-[20px] border border-zinc-200 bg-white p-3.5 shadow-[0_2px_6px_rgba(20,14,50,0.04)] transition-all hover:border-fi-300 hover:shadow-md cursor-pointer"
           >
-            {/* Left side authentic store logo */}
-            <StoreLogo brand={store.brand} />
+            {/* Left side CDN logo with SVG fallback */}
+            <StoreLogo
+              brand={store.brand}
+              logoUrl={store.logoUrl}
+              name={store.name}
+            />
 
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">

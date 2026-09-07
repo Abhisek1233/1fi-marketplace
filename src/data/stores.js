@@ -5,6 +5,7 @@ export const NEARBY_STORES = [
     distance: '1.0 KM',
     address: '64/9, New Railway Rd, near DSD college, Subhash Nagar, Sector 8, Gurugram, Haryana, 122001',
     brand: 'suzuki',
+    logoUrl: 'https://cdn.1fi.in/merchants/ashoka-suzuki-ac8fab.webp',
   },
   {
     id: 'store-2',
@@ -12,6 +13,7 @@ export const NEARBY_STORES = [
     distance: '1.4 KM',
     address: '6/38, Rajiv Chowk, Sector 33, Rajiv Chowk, Gurugram, Haryana, 122001',
     brand: 'suzuki',
+    logoUrl: 'https://cdn.1fi.in/merchants/ashoka-suzuki-ac8fab.webp',
   },
   {
     id: 'store-3',
@@ -19,6 +21,7 @@ export const NEARBY_STORES = [
     distance: '2.1 KM',
     address: '60, Khandsa Rd, Pace City I, Sector 10A, Gurugram, Haryana, 122001',
     brand: 'honda',
+    logoUrl: 'https://cdn.1fi.in/merchants/malwa-motors-5be363.webp',
   },
   {
     id: 'store-4',
@@ -26,6 +29,7 @@ export const NEARBY_STORES = [
     distance: '3.3 KM',
     address: 'Sector 40, Gurugram, Haryana, 122001',
     brand: 'atelier',
+    logoUrl: 'https://cdn.1fi.in/merchants/atelier-forbidden-journeys-ce5e98.webp',
   },
   {
     id: 'store-5',
@@ -33,6 +37,7 @@ export const NEARBY_STORES = [
     distance: '3.6 KM',
     address: 'Khata No 271, 316, Badshahpur Sohna Rd, Gurugram, Haryana, 122001',
     brand: 'suzuki',
+    logoUrl: 'https://cdn.1fi.in/merchants/ashoka-suzuki-ac8fab.webp',
   },
   {
     id: 'store-6',
@@ -40,5 +45,6 @@ export const NEARBY_STORES = [
     distance: '4.1 KM',
     address: 'Orchid Business Park, Near Subhash Chowk, Gurugram, Haryana, 122101',
     brand: 'chargeronwheel',
+    logoUrl: 'https://cdn.1fi.in/merchants/charger-on-wheels-c47579.webp',
   },
 ];
