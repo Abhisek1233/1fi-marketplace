@@ -12,14 +12,11 @@ import { MarketplaceSkeleton } from '../components/marketplace/MarketplaceSkelet
 import { MarketplaceEmptyState } from '../components/marketplace/MarketplaceEmptyState';
 import { MarketplaceError } from '../components/marketplace/MarketplaceError';
 import { useProducts } from '../hooks/useProducts';
-import { setSimulateNetworkError, getSimulateNetworkError } from '../services/marketplaceService';
-import { Bug } from 'lucide-react';
 
 export const ShopPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const initialTab = searchParams.get('tab') || 'marketplace'; // Default to the assignment centerpiece 'marketplace'
+  const initialTab = searchParams.get('tab') || 'marketplace';
   const [activeTab, setActiveTab] = useState(initialTab);
-  const [isSimulatingError, setIsSimulatingError] = useState(getSimulateNetworkError());
 
   const {
     products,
@@ -37,13 +34,6 @@ export const ShopPage = () => {
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
     setSearchParams({ tab: tabId });
-  };
-
-  const handleToggleErrorSimulation = () => {
-    const nextVal = !isSimulatingError;
-    setSimulateNetworkError(nextVal);
-    setIsSimulatingError(nextVal);
-    onRetry();
   };
 
   return (
@@ -84,7 +74,7 @@ export const ShopPage = () => {
               onSelectCategory={onCategoryChange}
             />
 
-            {/* Status Bar / Product Count & Reviewer Error Toggle */}
+            {/* Status Bar / Product Count */}
             <div className="flex items-center justify-between px-1 text-xs text-gray-500">
               <span>
                 {!isLoading && !error && (
@@ -94,21 +84,6 @@ export const ShopPage = () => {
                   </>
                 )}
               </span>
-
-              {/* Developer / Reviewer Testing Toggle */}
-              <button
-                type="button"
-                onClick={handleToggleErrorSimulation}
-                title="Toggle simulated network error to test error handling & retry UI"
-                className={`inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md border transition-colors ${
-                  isSimulatingError
-                    ? 'bg-red-50 text-red-700 border-red-200 font-bold'
-                    : 'bg-gray-100 text-gray-500 border-gray-200 hover:bg-gray-200'
-                }`}
-              >
-                <Bug className="h-3 w-3" />
-                <span>{isSimulatingError ? 'Error Active (Simulated)' : 'Simulate Error'}</span>
-              </button>
             </div>
 
             {/* Content States: Loading, Error, Empty, or Product Grid */}

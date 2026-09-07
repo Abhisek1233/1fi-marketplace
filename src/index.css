@@ -43,3 +43,71 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+/* Marquee Animations for 1Fi Dashboard */
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pingPongLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  45% {
+    transform: translateX(-28%);
+  }
+  50% {
+    transform: translateX(-28%);
+  }
+  95% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes pingPongRight {
+  0% {
+    transform: translateX(-28%);
+  }
+  45% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  95% {
+    transform: translateX(-28%);
+  }
+  100% {
+    transform: translateX(-28%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 22s linear infinite;
+}
+
+.animate-pingpong-left {
+  display: flex;
+  width: max-content;
+  animation: pingPongLeft 9s ease-in-out infinite;
+}
+
+.animate-pingpong-right {
+  display: flex;
+  width: max-content;
+  animation: pingPongRight 9s ease-in-out infinite;
+}
+
+.pause-hover:hover {
+  animation-play-state: paused;
+}
