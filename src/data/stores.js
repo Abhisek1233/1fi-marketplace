@@ -1,0 +1,38 @@
+export const NEARBY_STORES = [
+  {
+    id: 'store-1',
+    name: 'Pacholi Suzuki Railway Road',
+    distance: '1.0 KM',
+    address: '64/9, New Railway Rd, near DSD college, Subhash Nagar, Sector 8, Gurugram, Haryana, 122001',
+    brand: 'Suzuki Two-Wheelers',
+    logo: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=160&q=80',
+    type: 'Automobile',
+  },
+  {
+    id: 'store-2',
+    name: 'Pacholi Suzuki Rajiv Chowk',
+    distance: '1.4 KM',
+    address: '6/38, Rajiv Chowk, Sector 33, Rajiv Chowk, Gurugram, Haryana, 122001',
+    brand: 'Suzuki Two-Wheelers',
+    logo: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=160&q=80',
+    type: 'Automobile',
+  },
+  {
+    id: 'store-3',
+    name: 'Malwa Honda Khandsa Road',
+    distance: '2.1 KM',
+    address: 'Plot No. 12, Khandsa Rd, Opp. Sector 10A Market, Gurugram, Haryana, 122001',
+    brand: 'Honda Two-Wheelers',
+    logo: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=160&q=80',
+    type: 'Automobile',
+  },
+  {
+    id: 'store-4',
+    name: 'Croma Megastore MG Road',
+    distance: '3.5 KM',
+    address: 'MGF Metropolitan Mall, Ground Floor, MG Road, Gurugram, Haryana, 122002',
+    brand: 'Croma',
+    logo: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=160&q=80',
+    type: 'Electronics',
+  },
+];
