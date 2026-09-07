@@ -15,7 +15,7 @@ The 1Fi Shop page integrates three distinct sections via segmented pill tabs:
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
 ### 🛒 1. Marketplace Product Browsing & Discovery
 - **Live Search**: Instant keyword filtering across product names, brands, categories, and descriptions without full-page reloads.
