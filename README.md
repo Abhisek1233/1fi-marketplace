@@ -2,6 +2,8 @@
 
 An official implementation for the **1Fi SDE Intern Assignment**, extending the existing **1Fi Shop** experience with a native, high-performance **1Fi Marketplace** section.
 
+🚀 **Live Deployment:** [https://1fi-marketplace-indol.vercel.app/](https://1fi-marketplace-indol.vercel.app/)
+
 Built using 1Fi's exact mobile-first visual system, color palette (`#712CDC`), typography, rounded cards, floating navigation, and seamless 0% interest mutual-fund-backed EMI flows.
 
 ---
